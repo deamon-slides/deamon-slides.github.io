@@ -1,1 +1,19 @@
-deamon-slides.github.io
+<!DOCTYPE HTML>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <title>My slides</title>
+</head>
+<body>
+<h4>Direct acces to my slides</h4>
+<ul>
+    {% for repo in site.github.public_repositories %}
+    {% if repo.has_pages %}
+    <li>
+        <a href="{{site.github.url}}/{{repo.name}}">{{repo.description}}</a> <small>[<a href="{{repo.html_url}}">Github repo</a>]</small>
+    </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+</body>
+</html>
